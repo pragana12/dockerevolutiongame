@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  apievolutionbet:
+    container_name: apievolutionbet
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - logs:/var/log/supervisor
+    restart: always
+    env_file:
+      - .env
+
+volumes:
+  logs:
